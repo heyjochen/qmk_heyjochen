@@ -5,6 +5,6 @@ enum my_layers {
     _SYM,
     _NUM,
     _NAV,
-    _MOUSE,
-    _MEDIA_FN,
+    _FUN,
+    _MEDIA,
 };
