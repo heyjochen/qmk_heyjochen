@@ -15,7 +15,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
         _______,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, _______,          _______,    KC_K,    KC_H,  KC_COMM, KC_DOT,KC_SLSH,  _______,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                     LSY_ESC,  LNU_TAB, LNA_SPC,                   LMO_ENT, LME_BSPC, LFU_DEL
+                                     LSY_ESC,  LNU_TAB, LNA_SPC,                   KC_ENT, LME_BSPC, LFU_DEL
     //                               └────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
@@ -69,11 +69,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
       _______,  _______, _______, _______, _______,  _______,                            _______, _______, _______, _______, _______, _______,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-      _______,   _______, _______, _______,_______,  _______,                           _______, KC_LCBR, KC_RCBR,  KC_LPRN, KC_RPRN, _______,  
+      _______,   _______, _______, _______,_______,  _______,                             KC_F12,   KC_F7,   KC_F8,   KC_F9,_______,  _______,  
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       _______,  _______, _______, _______, _______, _______,                           KC_LEFT, KC_DOWN,    KC_UP, KC_RGHT, _______, _______, 
+       _______,  _______, _______, _______, _______, _______,                             KC_F11,   KC_F4,   KC_F5,   KC_F6, _______, _______, 
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-      _______,   _______, _______, _______, _______, _______, _______,          _______, _______, KC_LBRC, KC_RBRC,   KC_GT,  KC_LT,  _______,
+      _______,   _______, _______, _______, _______, _______, _______,          _______,  KC_F10,   KC_F1,   KC_F2,   KC_F3, _______, _______,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                        _______, _______, _______,                  _______,  _______, _______
     //                               └────────┴────────┴────────┘                 └────────┴────────┴────────┘
@@ -88,98 +88,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
        _______,  _______, _______, _______, _______, _______,                           _______, KC_MPRV,  KC_VOLD, KC_VOLU, KC_MNXT, _______, 
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-      _______,  _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______, _______, _______, _______,
+      _______,  _______, _______, _______, _______, _______, _______,          _______, _______, KC_MSTP, KC_MPLY,  KC_MUTE, _______, _______,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                       _______, _______, _______,                  KC_MSTP, KC_MPLY,  KC_MUTE
+                                       _______, _______, _______,                  _______,  _______, _______
     //                               └────────┴────────┴────────┘                 └────────┴────────┴────────┘
-    ),  
+    ),
 };
-
-// enum combos {
-//   AB_ESC,
-//   JK_TAB
-// };
-
-// const uint16_t PROGMEM ab_combo[] = {KC_A, KC_B, COMBO_END};
-// const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
-
-// combo_t key_combos[COMBO_COUNT] = {
-//   [AB_ESC] = COMBO(ab_combo, KC_ESC),
-//   [JK_TAB] = COMBO(jk_combo, KC_TAB)
-// };
-
-enum combo_events {
-  EM_EMAIL,
-  BSPC_LSFT_CLEAR,
-  BSPC_LALT_CLEAR,
-  COMBO_LENGTH
-};
-uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define and use this instead!
-
-const uint16_t PROGMEM email_combo[] = {KC_L, KC_U, COMBO_END};
-const uint16_t PROGMEM clear_line_combo[] = {KC_BSPC, KC_LSFT, COMBO_END};
-const uint16_t PROGMEM clear_word_combo[] = {KC_BSPC, KC_LALT, COMBO_END};
-
-combo_t key_combos[] = {
-  [EM_EMAIL] = COMBO_ACTION(email_combo),
-  [BSPC_LSFT_CLEAR] = COMBO_ACTION(clear_line_combo),
-  [BSPC_LALT_CLEAR] = COMBO_ACTION(clear_word_combo),
-};
-/* COMBO_ACTION(x) is same as COMBO(x, _______) */
-
-void process_combo_event(uint16_t combo_index, bool pressed) {
-  switch(combo_index) {
-    case EM_EMAIL:
-      if (pressed) {
-        SEND_STRING("jochen@stierberger.com");
-      }
-      break;
-    case BSPC_LSFT_CLEAR:
-      if (pressed) {
-        tap_code16(KC_END);
-        tap_code16(S(KC_HOME));
-        tap_code16(KC_BSPC);
-      }
-      break;
-  }
-}
-
-// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-//   switch (keycode) {
-//     case COLEMAK:
-//       if (record->event.pressed) {
-//         set_single_persistent_default_layer(_QWERTY);
-//       }
-//       return false;
-//       break;
-//     case LOWER:
-//       if (record->event.pressed) {
-//         layer_on(_LOWER);
-//         update_tri_layer(_LOWER, _RAISE, _ADJUST);
-//       } else {
-//         layer_off(_LOWER);
-//         update_tri_layer(_LOWER, _RAISE, _ADJUST);
-//       }
-//       return false;
-//       break;
-//     case RAISE:
-//       if (record->event.pressed) {
-//         layer_on(_RAISE);
-//         update_tri_layer(_LOWER, _RAISE, _ADJUST);
-//       } else {
-//         layer_off(_RAISE);
-//         update_tri_layer(_LOWER, _RAISE, _ADJUST);
-//       }
-//       return false;
-//       break;
-//     case ADJUST:
-//       if (record->event.pressed) {
-//         layer_on(_ADJUST);
-//       } else {
-//         layer_off(_ADJUST);
-//       }
-//       return false;
-//       break;
-//   }
-//   return true;
-// }
