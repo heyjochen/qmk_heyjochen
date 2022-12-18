@@ -16,13 +16,23 @@ For usage information go to [QMK docs](https://docs.qmk.fm/#/newbs).
 ### COLEMAKDH
 
 <img width="800" alt="colemakdh layer keymap" src="https://github.com/heyjochen/qmk_heyjochen/blob/main/assets/_COLEMAK.png">
-### _SYM
+
+### SYMBOL
+
 <img width="800" alt="symbol layer keymap" src="https://github.com/heyjochen/qmk_heyjochen/blob/main/assets/_SYM.png">
-### _NUM
+
+### NUMBER
+
 <img width="800" alt="number layer keymap" src="https://github.com/heyjochen/qmk_heyjochen/blob/main/assets/_NUM.png">
-### _NAV
+
+### NAVIGATION
+
 <img width="800" alt="navigation layer keymap" src="https://github.com/heyjochen/qmk_heyjochen/blob/main/assets/_NAV.png">
-### _FUN
+
+### FUNCTION
+
 <img width="800" alt="function keymap" src="https://github.com/heyjochen/qmk_heyjochen/blob/main/assets/_FUN.png">
-### _MEDIA
+
+### MEDIA
+
 <img width="800" alt="media layer keymap" src="https://github.com/heyjochen/qmk_heyjochen/blob/main/assets/_MEDIA.png">
