@@ -94,3 +94,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //                               └────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 };
+enum combo_events {
+  SCREENSHOT,
+  COMBO_LENGTH
+};
+uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define and use this instead!
+
+const uint16_t PROGMEM clear_line_combo[] = {KC_R, KC_S, COMBO_END};
+
+combo_t key_combos[] = {
+  [SCREENSHOT] = COMBO_ACTION(clear_line_combo),
+};
+
+void process_combo_event(uint16_t combo_index, bool pressed) {
+  switch(combo_index) {
+    case SCREENSHOT:
+      if (pressed) {
+        tap_code16(KC_LGUI);
+        tap_code16(KC_LSFT);
+        tap_code16(KC_4);
+      }
+      break;
+  }
+}
