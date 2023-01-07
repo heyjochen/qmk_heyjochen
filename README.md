@@ -36,8 +36,3 @@ For usage information go to [QMK docs](https://docs.qmk.fm/#/newbs).
 ### MEDIA
 
 <img width="800" alt="media layer keymap" src="https://github.com/heyjochen/qmk_heyjochen/blob/main/assets/_MEDIA.png">
-
-
-## Compile
-
-qmk compile -kb keebio/iris/rev7 -km heyjochen
