@@ -96,24 +96,42 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 enum combo_events {
   SCREENSHOT,
+  CAPSWORD,
   COMBO_LENGTH
 };
 uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define and use this instead!
 
-const uint16_t PROGMEM clear_line_combo[] = {KC_W, KC_F, COMBO_END};
+const uint16_t PROGMEM screenshot_combo[] = {KC_W, KC_F, COMBO_END};
+const uint16_t PROGMEM capsword_combo[] = {KC_C, KC_D, COMBO_END};
 
 combo_t key_combos[] = {
-  [SCREENSHOT] = COMBO_ACTION(clear_line_combo),
+  [SCREENSHOT] = COMBO_ACTION(screenshot_combo),
+  [CAPSWORD] = COMBO_ACTION(capsword_combo),
 };
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
   switch(combo_index) {
     case SCREENSHOT:
       if (pressed) {
-        tap_code16(KC_LGUI);
-        tap_code16(KC_LSFT);
-        tap_code16(KC_4);
+        tap_code16(LSG(KC_4));
+      }
+      break;
+    case CAPSWORD:
+      if (pressed) {
+        caps_word_on()
       }
       break;
   }
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LALT(KC_BSPC):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(LALT(KC_BSPC); // Send KC_DQUO on tap
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
+    }
+    return true;
 }
