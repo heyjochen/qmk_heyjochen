@@ -118,20 +118,9 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
       break;
     case CAPSWORD:
       if (pressed) {
-        caps_word_on()
+        caps_word_on();
       }
       break;
   }
 }
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LALT(KC_BSPC):
-            if (record->tap.count && record->event.pressed) {
-                tap_code16(LALT(KC_BSPC); // Send KC_DQUO on tap
-                return false;        // Return false to ignore further processing of key
-            }
-            break;
-    }
-    return true;
-}
